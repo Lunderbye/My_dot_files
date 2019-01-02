@@ -27,7 +27,13 @@ git submodule update
 # Goto to home
 cd
 
-# Check the file exists or not.
+# bash settings
+if [ ! -e ~/.bashrc ]
+then
+    ln -s ~/Dotfiles/bashrc ~/.bashrc
+fi
+
+# vim settings
 if [ ! -d ~/.vim ]
 then
     ln -s ~/Dotfiles/vim-files/vim ~/.vim
@@ -38,6 +44,7 @@ then
     ln -s ~/Dotfiles/vim-files/vim/vimrc ~/.vimrc
 fi
 
+# tmux settings
 if [ ! -e ~/.tmux.conf ]
 then
     ln -s ~/Dotfiles/tmux.conf ~/.tmux.conf
