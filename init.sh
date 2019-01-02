@@ -45,4 +45,4 @@ then
 fi
 
 # Install VIM with all scripting language support.
-sudo zypper install vim-nox
+#sudo zypper install vim-nox
