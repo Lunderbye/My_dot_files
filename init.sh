@@ -2,6 +2,7 @@
 
 # File to bootstrap the .dot files environment
 # Run as the user requiring the environment
+# Based on https://github.com/haridas/Dotfiles
 
 # Install git
 sudo zypper install -y git
