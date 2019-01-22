@@ -1,8 +1,15 @@
+###################
+# My .bashrc file #
+###################
 
 # Default editor
 export EDITOR=/usr/bin/vim
 
-# For some news readers it makes sense to specify the NEWSSERVER variable here
-#export NEWSSERVER=your.news.server
+# Grep
+alias grep='grep -n'
+export GREP_OPTIONS='--color=auto'
+export GREP_COLOR='1;35;40'
 
-test -s ~/.alias && . ~/.alias || true
+
+# Prompt
+export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w\[\033[01;32m\]$(__git_ps1)\[\033[01;34m\] \$\[\033[34m\] '
