@@ -19,19 +19,22 @@ function cdn(){ for i in `seq $1`; do cd ..; done;}
 
 # Functions
 welcome() {
-    #------------------------------------------
-    #------WELCOME MESSAGE---------------------
-    # customize this first message with a message of your choice.
-    # this will display the username, date, time, a calendar, the amount of users, and the up time.
-    #clear
-    # Gotta love ASCII art with figlet
-    figlet "Welcome, " $USER;
-    #toilet "Welcome, " $USER;
-    echo -e ""; cal ;
-    echo -ne "Today is "; date #date +"Today is %A %D, and it is now %R"
+    ##############################
+    ##      WELCOME MESSAGE     ##
+    ##############################
+
+echo -ne "
+ ______     __  __     ______     ______    \r
+/\  ___\   /\ \/\ \   /\  ___\   /\  ___\   \r
+\ \___  \  \ \ \_\ \  \ \___  \  \ \  __\   \r
+ \/\_____\  \ \_____\  \/\_____\  \ \_____\ \r
+  \/_____/   \/_____/   \/_____/   \/_____/ \n"
+
+    #echo -e ""; cal -wm ;
+    #echo -ne "Today is "; date #date +"Today is %A %D, and it is now %R"
     echo -e ""
     echo -ne "Up time:";uptime | awk /'up/'
-    # echo -en "Local IP Address :"; /sbin/ifconfig wlan0 | awk /'inet addr/ {print $2}' | sed -e s/addr:/' '/ 
+    # echo -en "Local IP Address :"; /sbin/ifconfig wlan0 | awk /'inet addr/ {print $2}' | sed -e s/addr:/' '/
     echo "";
 }
 welcome;
