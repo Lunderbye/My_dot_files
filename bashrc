@@ -3,8 +3,8 @@
 ###################
 
 # Get BASEDIR
-BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
-BIN_DIR="$BASEDIR/Dotfiles"
+#BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+#BIN_DIR="$BASEDIR/Dotfiles"
 
 # Default editor
 export EDITOR=/usr/bin/vim
@@ -28,7 +28,9 @@ welcome() {
     ##############################
 
     # Use the ufetch system info
-    source "$BIN_DIR/ufetch-linux.sh"
+    # source "$BIN_DIR/ufetch-linux.sh"
+
+    neofetch --ascii_distro os_small --disable resolution theme icons shell de packages term gpu --color_blocks off
 
     echo "";
 }
