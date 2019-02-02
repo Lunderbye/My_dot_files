@@ -50,5 +50,11 @@ then
     ln -s ~/Dotfiles/tmux.conf ~/.tmux.conf
 fi
 
+# termintor settings
+if [ ! -e ~/.config/terminator/config ]
+then
+    ln -s ~/Dotfiles/terminator.conf ~/.config/terminator/config
+fi
+
 # Install VIM with all scripting language support.
 #sudo zypper install vim-nox
