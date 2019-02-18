@@ -4,8 +4,16 @@
 # Run as the user requiring the environment
 # Based on https://github.com/haridas/Dotfiles
 
-# Install git
+# Add repos
+zypper addrepo https://download.opensuse.org/repositories/X11:terminals/openSUSE_Factory/X11:terminals.repo
+zypper refresh
+
+# Install packages
+sudo zypper install -y st
 sudo zypper install -y git
+sudo zypper install -y i3-gaps
+sudo zypper install -y i3blocks
+sudo zypper install -y neofetch
 
 # Pull repo if non existing
 if [ -d ~/Dotfiles ]
@@ -26,6 +34,12 @@ git submodule update
 
 # Goto to home
 cd
+
+# i3 settings
+if [ ! -e ~/.config/i3/config ]
+then
+    ln -s ~/Dotfiles/i3/i3.conf ~/.config/i3/config
+fi
 
 # bash settings
 if [ ! -e ~/.bashrc ]
@@ -54,6 +68,12 @@ fi
 if [ ! -e ~/.config/terminator/config ]
 then
     ln -s ~/Dotfiles/terminator.conf ~/.config/terminator/config
+fi
+
+# pureline settings
+if [ ! -e ~/.pureline.conf ]
+then
+    ln -s ~/Dotfiles/pureline_configs/powerline.conf ~/.pureline.conf
 fi
 
 # Install VIM with all scripting language support.
