@@ -11,7 +11,8 @@ export EDITOR=/usr/bin/vim
 # Default filemgr
 export FILE="nnn"
 # Default terminal
-export TERMINAL="st"
+export TERMINAL="terminator"
+export BROWSER="google-chrome-stable"
 
 # Grep
 alias grep='grep -n'
@@ -23,6 +24,7 @@ export GREP_COLOR='1;35;40'
 
 # Check if we are running interactive
 if [ "$TERM" != "linux" ]; then
+#    source ~/Dotfiles/pureline_configs ~/.my_powerline.conf
     source ~/Dotfiles/pureline ~/.pureline.conf
 fi
 

@@ -73,7 +73,7 @@ fi
 # pureline settings
 if [ ! -e ~/.pureline.conf ]
 then
-    ln -s ~/Dotfiles/pureline_configs/powerline.conf ~/.pureline.conf
+    ln -s ~/Dotfiles/pureline_configs/my_powerline.conf ~/.pureline.conf
 fi
 
 # Install VIM with all scripting language support.
