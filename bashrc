@@ -6,6 +6,14 @@
 #BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 #BIN_DIR="$BASEDIR/Dotfiles"
 
+# Variables
+host="$(hostname)"
+os='Linux'      # I'd just like to interject for a moment...
+kernel="$(uname -sr)"
+uptime="$(uptime | awk -F, '{sub(".*up ",x,$1);print $1}' | sed -e 's/^[ \t]*//')"
+shell="$(basename ${SHELL})"
+ip="$(ip route get 1 | awk '{print $(NF-2);exit}')"
+
 # Default editor
 export EDITOR=/usr/bin/vim
 # Default filemgr
@@ -38,11 +46,27 @@ welcome() {
     ##      WELCOME MESSAGE     ##
     ##############################
 
+    # Alt 1.
     # Use the ufetch system info
     # source "$BIN_DIR/ufetch-linux.sh"
 
-    neofetch --ascii_distro suse os_small --disable resolution theme icons shell de packages term gpu --color_blocks off
+    # Alt 2.
+    #neofetch --ascii_distro suse os_small --disable resolution theme icons shell de packages term gpu --color_blocks off
 
+echo -ne "
+ ______     __  __     ______     ______    \r
+/\  ___\   /\ \/\ \   /\  ___\   /\  ___\   \r
+\ \___  \  \ \ \_\ \  \ \___  \  \ \  __\   \r
+ \/\_____\  \ \_____\  \/\_____\  \ \_____\ \r
+  \/_____/   \/_____/   \/_____/   \/_____/ \n";
+
+    echo -e  "";
+    echo -ne "Host:"${host};
+    echo -ne " | Kernel:"${kernel};
+    echo -ne " | Up:"${uptime};
+    echo -ne " | IP:"${ip};
     echo "";
 }
 welcome;
+
+
