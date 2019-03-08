@@ -9,11 +9,21 @@ zypper addrepo https://download.opensuse.org/repositories/X11:terminals/openSUSE
 zypper refresh
 
 # Install packages
-sudo zypper install -y st
-sudo zypper install -y git
-sudo zypper install -y i3-gaps
-sudo zypper install -y i3blocks
-sudo zypper install -y neofetch
+sudo zypper install -y st			# Suckless terminal
+sudo zypper install -y git			# Version control
+sudo zypper install -y i3-gaps			# i3wm with gaps
+sudo zypper install -y i3blocks			#
+sudo zypper install -y i3lock			# i3 lock screen
+sudo zypper install -y neofetch			# System status script
+sudo zypper install -y nitrogen			# BG picker
+sudo zypper install -y compton			# i3 window effects
+sudo zypper install -y feh			# Set wallpaper bg
+sudo zypper install -y playerctl		# control media players over DBus. Works with most players
+sudo zypper install -y powerline		# Powerline Bash prompt
+sudo zypper install -y powerline-fonts		# PL fonts
+sudo zypper install -y tmux-powerline		# PL for tmux
+sudo zypper install -y vim-plugin-powerline	# PL for vim
+sudo zypper install -y dunst			# Notification utility
 
 # Pull repo if non existing
 if [ -d ~/Dotfiles ]

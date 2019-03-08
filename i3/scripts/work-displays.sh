@@ -1,2 +1,7 @@
-#!/bin/sh
-xrandr --output DP-1-3 --off --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-2 --off --output DP-1 --off --output DP-3 --off --output DP-1-2 --mode 1920x1200 --pos 1920x0 --rotate normal --output DP-1-1 --off
+3:	EDID: 
+4-		00ffffffffffff004d109a1400000000
+5-		041c0104a52213780ede50a3544c9926
+--
+107:	EDID: 
+108-		00ffffffffffff0010ac7ba04c463130
+109-		271c0104a53420783aee95a3544c9926
