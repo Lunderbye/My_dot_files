@@ -19,8 +19,8 @@ export EDITOR=/usr/bin/vim
 # Default filemgr
 export FILE="nnn"
 # Default terminal
-export TERMINAL="terminator"
-export BROWSER="google-chrome-stable"
+export TERMINAL="/usr/bin/terminator"
+export BROWSER=/usr/bin/google-chrome-stable
 
 # Grep
 #alias grep='grep -n --color=auto'
@@ -90,3 +90,14 @@ echo -ne $lcol"
 }
 welcome;
 cd ~/peterlunderbye@gmail.com/Arbete/SUSE
+# Prompt
+#export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w\[\033[01;32m\]$(__git_ps1)\[\033[01;34m\] \$\[\033[34m\] '
+
+if [ -f `which powerline-daemon` ]; then
+  powerline-daemon -q
+  POWERLINE_BASH_CONTINUATION=1
+  POWERLINE_BASH_SELECT=1
+  . /usr/share/powerline/bash/powerline.sh
+fi
+
+#. {repository_root}/powerline/bindings/bash/powerline.sh

@@ -15,6 +15,7 @@ sudo zypper install -y i3-gaps			# i3wm with gaps
 sudo zypper install -y i3blocks			#
 sudo zypper install -y i3lock			# i3 lock screen
 sudo zypper install -y neofetch			# System status script
+sudo zypper install -y polybar			# Install Polybar
 sudo zypper install -y nitrogen			# BG picker
 sudo zypper install -y compton			# i3 window effects
 sudo zypper install -y feh			# Set wallpaper bg
@@ -22,7 +23,7 @@ sudo zypper install -y playerctl		# control media players over DBus. Works with 
 sudo zypper install -y powerline		# Powerline Bash prompt
 sudo zypper install -y powerline-fonts		# PL fonts
 sudo zypper install -y tmux-powerline		# PL for tmux
-sudo zypper install -y vim-plugin-powerline	# PL for vim
+#sudo zypper install -y vim-plugin-powerline	# PL for vim
 sudo zypper install -y dunst			# Notification utility
 
 # Pull repo if non existing
@@ -84,6 +85,27 @@ fi
 if [ ! -e ~/.pureline.conf ]
 then
     ln -s ~/Dotfiles/pureline_configs/my_powerline.conf ~/.pureline.conf
+fi
+
+# Polybar config
+if [ ! -e ~/.config/polybar/config ]
+then
+    mkdir ~/.config/polybar
+    ln -s ~/Dotfiles/polybar/config ~/.config/polybar/config
+    ln -s ~/Dotfiles/polybar/launch.sh ~/.config/polybar/launch.sh
+fi
+
+# Compton config
+if [ ! -e ~/.config/compton.conf ]
+then
+    ln -s ~/Dotfiles/compton/compton.conf ~/.config/compton.conf
+fi
+
+# Dunst config
+if [ ! -e ~/.config/dunst/dunstrc ]
+then
+    mkdir ~/.config/dunst
+    ln -s ~/Dotfiles/dunst/dunstrc ~/.config/dunst/dunstrc
 fi
 
 # Install VIM with all scripting language support.
